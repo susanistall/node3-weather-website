@@ -7,11 +7,10 @@ weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
     
     const location = search.value
-     messageOne = ''
-     messageTow = ''
      
     fetch('/weather?address=' + location).then((response) => {
     response.json().then((data) => {
+        console.log(data.location)
        if(data.error) {
            messageOne.textContent = data.error
        }
